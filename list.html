@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FlashCard</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://kit.fontawesome.com/8caab3f45a.js"></script>
+    <!-- Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900|Source+Sans+Pro:200,300,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo"><a href="index.html"><h1>FlashCard</h1></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="list.html"><i class="far fa-list-alt"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contents">
+      <div class="list btm50">
+        <h2>一覧</h2>
+        <p class="define btm50">登録済みの単語の一覧</p>
+        <div class="listUtility">
+            <div class="listFinished">
+              <span class="cGreen"><i class="fas fa-check-circle"></i>&nbsp;</span
+              ><span id="understandChild" class="cGreen">0</span>
+              <span class="sSpace">/</span>
+              <span id="countLocalStorage"></span>
+            </div>
+          </div>
+        <h3>学習中</h3>
+        <div id= "list-all" class="btm50">
+        </div>
+        <h3>習得済み</h3>
+        <div id= "list-cleared" class="btm50">
+          </div>
+      </div>
+    <!-- モーダル -->
+    <div class="popup" id="js-popup">
+        <div class="popup-inner pop-list">
+          <div class="btm30">
+          <span class="modal-header btm20">単語の修正・削除</span>
+          <form name="fix">
+              <input type="text" id="revise-word" class="modal-word btm20" autocomplete=off placeholder="Word" />
+              <input type="text" id="revise-definition" class="modal-define btm20" autocomplete=off placeholder="Definition" />
+            <div class="fix-box">
+              <button type="button" id="saveLocalStorage" class="modal-revise" onclick="reviseData(this)">修正</button>
+              <button type="button" id="saveLocalStorage" class="modal-dump" onclick="deleteLocalStorageData(this)"><i class="far fa-trash-alt"></i></button>
+            </div>
+          </form>
+         </div>
+         <button type="button" id="saveLocalStorage" class="modal-close" onclick="closeModal()">閉じる</button>
+ 
+        </div>
+        <div class="black-background" id="js-black-bg" onclick= "switchModal()"></div>
+      </div>
+
+    <div class="develop">
+    <h2>Develop</h2>
+    <button type="button" class="" onclick="dumpLocalStorageData()">全てのデータを削除</button>
+    <h2>JSONインポート（データ全削除後に実行すること）</h2>
+    <form name="jsonForm">
+      <input name="jsonFile" type="file" /><br />
+    </form>
+  </div>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/list.js"></script>
+  </body>
+</html>

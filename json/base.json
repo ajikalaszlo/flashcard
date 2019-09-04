@@ -1,0 +1,112 @@
+[
+  {
+    "key": 0,
+    "word": "apple",
+    "definition": "りんご"
+  },
+  {
+    "key": 1,
+    "word": "orange",
+    "definition": "オレンジ"
+  },
+  {
+    "key": 2,
+    "word": "grape",
+    "definition": "グレープ"
+  },
+  {
+    "key": 3,
+    "word": "lemon",
+    "definition": "レモン"
+  },
+  {
+    "key": 4,
+    "word": "peach",
+    "definition": "ピーチ"
+  },
+  {
+    "key": 5,
+    "word": "melon",
+    "definition": "メロン"
+  },
+  {
+    "key": 6,
+    "word": "red",
+    "definition": "赤"
+  },
+  {
+    "key": 7,
+    "word": "blue",
+    "definition": "青"
+  },
+  {
+    "key": 8,
+    "word": "green",
+    "definition": "緑"
+  },
+  {
+    "key": 9,
+    "word": "yellow",
+    "definition": "黄"
+  },
+  {
+    "key": 10,
+    "word": "black",
+    "definition": "黒"
+  },
+  {
+    "key": 11,
+    "word": "white",
+    "definition": "白"
+  },
+  {
+    "key": 12,
+    "word": "pink",
+    "definition": "ピンク"
+  },
+  {
+    "key": 13,
+    "word": "gray",
+    "definition": "灰色"
+  },
+  {
+    "key": 14,
+    "word": "lion",
+    "definition": "ライオン"
+  },
+  {
+    "key": 15,
+    "word": "dog",
+    "definition": "いぬ"
+  },
+  {
+    "key": 16,
+    "word": "cat",
+    "definition": "ねこ"
+  },
+  {
+    "key": 17,
+    "word": "elephant",
+    "definition": "ぞう"
+  },
+  {
+    "key": 18,
+    "word": "parrot",
+    "definition": "おうむ"
+  },
+  {
+    "key": 19,
+    "word": "snake",
+    "definition": "へび"
+  },
+  {
+    "key": 20,
+    "word": "gorilla",
+    "definition": "ゴリラ"
+  },
+  {
+    "key": 21,
+    "word": "monkey",
+    "definition": "さる"
+  }
+]

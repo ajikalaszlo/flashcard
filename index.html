@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>FlashCard</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://kit.fontawesome.com/8caab3f45a.js"></script><!-- Font Awesome -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900|Source+Sans+Pro:200,300,600,700,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo"><a href="index.html"><h1>FlashCard</h1></a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="list.html"><i class="far fa-list-alt"></i></a></li>
+          </ul>
+        </div>
+      </div>
+  <div class="add btm50">
+    <div class="add-newword btm50">
+      <h2>言葉を登録</h2>
+      <p class="define btm50">新しい単語を登録しましょう</p>
+      <form name="submit">
+        <input type="text" id="word" class="form-submit-word btm20" autocomplete=off placeholder="Word" />
+        <input type="text" id="definition" class="form-submit-define btm20" autocomplete=off placeholder="Definition" />
+        <button type="button" id="saveLocalStorage" class="form-add" onclick="pushData()">追加</button>
+      </form>
+    </div>
+  </div>
+  <div class="start-quiz">
+    <button onclick="switchModal(this)"><i class="fas fa-spell-check"></i></button>
+  </div>
+
+  <div class="popup" id="js-popup">
+      <div class="popup-inner">
+          <div class="quiz">
+              <h2>単語帳</h2>
+              <p class="define btm50">単語を覚えましょう</p>
+              <div id="randomLocalStorage">
+              </div>
+            </div>
+       <button type="button" id="saveLocalStorage" class="modal-close" onclick="closeModal()">閉じる</button>
+
+      </div>
+      <div class="colored-background" id="js-black-bg" onclick= "switchModal()"></div>
+    </div>
+
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>
