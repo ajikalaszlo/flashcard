@@ -259,6 +259,11 @@ h4{
 #list-all, #list-cleared{
     border-top: 1px solid #CCCCCC;
 }
+
+#list-all p, #list-cleared p{
+    display: block;
+    margin-top: 1rem;
+}
 .list-row{
     width: 100%;
     display: flex;

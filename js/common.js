@@ -2,7 +2,14 @@
 
 // すべてのデータを表示する
 function showAllData() {
+    if (localStorage.length === 0) {
+        document.getElementById("list-cleared").innerHTML = "<p>毎日少しずつ覚えましょう</p>";
+        document.getElementById("list-all").innerHTML = "<p>まだありません</p>";
+        return;
+    }
     let understand = 0;
+    let i = 0;
+    let l = 0;
     document.getElementById("list-all").innerHTML = "";
     document.getElementById("list-cleared").innerHTML ="" ;
     Object.keys(localStorage).forEach(function (key) {
@@ -28,6 +35,8 @@ function showAllData() {
           </div>
           `
         );
+          i = i + 1;
+          l = l + 1;
       }else{
         document.getElementById("list-cleared").insertAdjacentHTML(
           "beforeend",
@@ -48,7 +57,15 @@ function showAllData() {
           `
         );
         understand = understand + 1;
-      };
+        };
+        console.log(i);
+        if (i === localStorage.length) {
+            document.getElementById("list-cleared").innerHTML ="<p>毎日少しずつ覚えましょう</p>" ;
+        }
+
+        if (l === 0) {
+            document.getElementById("list-all").innerHTML ="<p>新しい単語を登録しましょう！</p>" ;
+        }
         document.getElementById("understandChild").innerHTML = understand;
         console.log(understand);
       showLength();
@@ -96,8 +113,6 @@ function showAllData() {
       localStorage.setItem(realKey, setjson);
       document.submit.reset(); // 保存後にフォームをリセット
     }
-    console.log("1？");
-    console.log("2？");
     arreyLocalStorage();
   }
 
@@ -122,7 +137,7 @@ function showAllData() {
     }
   }
 
-//ランダムで問題配列のの生成
+//ランダムで問題配列の生成
 function arreyLocalStorage() {
     window.arrayLS = [];
     Object.keys(localStorage).forEach(function (key) {
