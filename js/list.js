@@ -6,7 +6,7 @@ window.onload = firstFunction;
 // Localstorage内のデータを全て表示
 function firstFunction() {
     showAllData();
-    showLength()
+    showLength();
 }
 
 // jsonファイルの読み込み・LocalStorageへの一括登録
@@ -24,8 +24,8 @@ form.jsonFile.addEventListener('change', function (e) {
             const flashcards = {
                 word: jsondata[key].word,
                 definition: jsondata[key].definition,
-                favorite: 0,
-                understanding: 0
+                favorite: [key].favorite,
+                understanding: [key].understanding
             };
             const setjson = JSON.stringify(flashcards);
             localStorage.setItem(jsondata[key].key, setjson);
@@ -94,4 +94,50 @@ function deleteLocalStorageData(pushedDeleteButton) {
     showLength();
     showAllData();
     closeModal();
+}
+
+// display: noneの要素に対してデータを保存
+function outputLocasStorage() {
+    let i = 0;
+    document.getElementById("stored").insertAdjacentText(
+        "beforeend",
+        `[`
+    );
+    Object.keys(localStorage).forEach(function (key) {
+        const d = JSON.parse(localStorage.getItem(key));
+        if (i === localStorage.length - 1) {
+            document.getElementById("stored").insertAdjacentHTML(
+                "beforeend",
+                `
+            {
+                "key": ${key},
+                "word": "${d.word}",
+                "favorite": "${d.favorite}",
+                "understanding": "${d.understanding}"
+                "definition": "${d.definition}"
+              }
+            ]
+            `
+            );
+        } else {
+            document.getElementById("stored").insertAdjacentText(
+                "beforeend",
+                `
+                {
+                    "key": ${key},
+                    "word": "${d.word}",
+                    "favorite": "${d.favorite}",
+                    "understanding": "${d.understanding}"
+                    "definition": "${d.definition}"
+                  },
+                `
+            )
+
+            i = i + 1;
+        }
+    }
+    )
+    const stored = document.getElementById("stored");
+    document.getElementById("ppp").value = stored.innerText;
+
 }

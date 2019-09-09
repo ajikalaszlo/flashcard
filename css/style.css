@@ -70,6 +70,7 @@ h4{
     justify-content: center;    
     width: 14rem;
     height: 100%;
+    margin-left: 1rem;
     font-size: 2.8rem;
     /* border-right: 1px #CCCCCC solid; */
     color: #FFFFFF;
@@ -100,6 +101,10 @@ h4{
 }
 .menu li a{
     color: #FFFFFF;
+}
+
+.menu-right{
+        justify-content: flex-end;
 }
 
 /* contents */
@@ -233,25 +238,28 @@ h4{
 }
 
 /* list utility*/
-.listUtility{
+/* .listUtility{
     display: flex;
     justify-content: flex-end;
-}
+} */
 
 .listFinished{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
-    border: 1px solid #CCCCCC;
+    min-width: 100px;
+    height: 3rem;
+
+    background-color: #FFFFFF;
     border-radius: 0.5rem;
-    padding: 0 3rem;
-    font-size: 2.8rem;
+    padding: 0 0.2rem;
+    margin: 1rem 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 .listFinished .sSpace{
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     font-weight: normal;
 }
 
@@ -442,6 +450,10 @@ font-size: 2rem;
     padding: 0 2rem;
 }
 
+#stored{
+    visibility: hidden;
+}
+
 /* modal */
 .popup {
     position: fixed;
@@ -587,12 +599,13 @@ text-align: right;
 }
 
 .start-quiz button{
+    width: 10rem;
+    height: 10rem;
     justify-content: right;
     background-color:#1AAF48;
-    font-size: 2.4rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #FFFFFF;
-    padding: 2.4rem;
     border-radius: 10rem;
     border: 0;
     box-shadow:2px 2px 6px 1px #CCCCCC;

@@ -6,20 +6,10 @@ window.onload = firstFunction;
 // Localstorage内のデータを全て表示
 function firstFunction() {
   arreyLocalStorage();
+  showLength();
 }
 
 function switchModal(localstorageid) {
-  // const id = localstorageid.parentNode.parentNode.parentNode; // ボタンが押された要素のkeyがある親に移動
-  // const pickTrId = id.getAttribute("data-key"); // idを取得
-  // const addKey = document.getElementById("js-popup");
-  // addKey.dataset.key = pickTrId;
-  // const d = JSON.parse(localStorage.getItem(pickTrId)); // データを取得してparse
-
-  // // フォームに挿入
-  // document.getElementById("revise-word").value = d.word;
-  // document.getElementById("revise-definition").value = d.definition ;
-  // // localStorage.removeItem(pickTrId); // localstorageからidと同名のキーを削除
-  // // rows.parentNode.deleteRow(rows.sectionRowIndex); // rowsでtbody内の行番号を指定して削除
   closeModal();
 }
 // モーダルを閉じる
