@@ -66,13 +66,11 @@ h4{
 }
 .logo{
     display: flex;
-    align-items: center;
-    justify-content: center;    
-    width: 14rem;
+    align-items: center; 
+    /* width: 14rem; */
     height: 100%;
     margin-left: 1rem;
     font-size: 2.8rem;
-    /* border-right: 1px #CCCCCC solid; */
     color: #FFFFFF;
 }
 
@@ -446,12 +444,14 @@ font-size: 2rem;
 /* Develop */
 .develop{
     margin: auto;
+    width: 100%;
     max-width: 100rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
-#stored{
-    visibility: hidden;
+#temporaryarea{
+    resize: none;
+    width: 100%;
 }
 
 /* modal */
@@ -594,7 +594,6 @@ font-size: 2rem;
 
 .start-quiz{
 padding: 0 1rem;
-
 text-align: right;
 }
 

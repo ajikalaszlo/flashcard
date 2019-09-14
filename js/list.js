@@ -99,45 +99,64 @@ function deleteLocalStorageData(pushedDeleteButton) {
 // display: noneの要素に対してデータを保存
 function outputLocasStorage() {
     let i = 0;
-    document.getElementById("stored").insertAdjacentText(
-        "beforeend",
-        `[`
-    );
+    let temporaryLocalStorage;
+    let backupValue = document.getElementById("temporaryarea");
+    backupValue.value = `[
+    `;
     Object.keys(localStorage).forEach(function (key) {
         const d = JSON.parse(localStorage.getItem(key));
         if (i === localStorage.length - 1) {
-            document.getElementById("stored").insertAdjacentHTML(
-                "beforeend",
-                `
+            temporaryLocalStorage = `
             {
                 "key": ${key},
                 "word": "${d.word}",
                 "favorite": "${d.favorite}",
                 "understanding": "${d.understanding}"
                 "definition": "${d.definition}"
-              }
+            }
             ]
             `
-            );
         } else {
-            document.getElementById("stored").insertAdjacentText(
-                "beforeend",
-                `
-                {
+            temporaryLocalStorage = 
+                `{
                     "key": ${key},
                     "word": "${d.word}",
                     "favorite": "${d.favorite}",
                     "understanding": "${d.understanding}"
                     "definition": "${d.definition}"
                   },
-                `
-            )
-
+            `
+                ;
+            console.log(temporaryLocalStorage);
+            backupValue.value = backupValue.value + temporaryLocalStorage;
             i = i + 1;
+            console.log(localStorage.length);
         }
     }
     )
-    const stored = document.getElementById("stored");
-    document.getElementById("ppp").value = stored.innerText;
 
+}
+
+function outputLocasStorage2() {
+    let backupValue = document.getElementById("temporaryarea");
+    backupValue.value =
+        `
+    {
+        "key": ""
+        "word": ""
+        "favorite": ""
+        "understanding": ""
+        "definition": ""
+      },`;
+
+let hahaha =
+    `
+    {
+        "key": ""hahahaha
+        "word": ""hahahhaahahahah
+        "favorite": ""gagagagaa
+        "understanding": ""
+        "definition": ""hhahaaaa
+      },`
+    backupValue.value = backupValue.value + hahaha;
 }
