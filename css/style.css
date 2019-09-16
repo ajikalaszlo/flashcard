@@ -163,25 +163,26 @@ h4{
     color: #ffffff;
     border: 0;
 }
+#answerButton{
+    display: flex;
+    width: 100%;
 
+}
 .answerOK,.answerNG{
-    display: block;
-    width: 50%;
+    flex: 1;
     height: 6rem; 
     padding: none;
     border: 0;
-    margin:none;
+    margin: none;
     font-size: 2rem;
     font-weight: bold;
     color: #FFFFFF;
 }
 .answerOK{
-    float: left;
     background-color: #1AAF48;
     border-radius: 0 0 0 0.5rem;
 }
 .answerNG{
-    float: right;
     background-color: #CCCCCC;
     border-radius: 0 0 0.5rem 0;
 }
@@ -228,7 +229,7 @@ h4{
     padding: 1rem 3.2rem;
     /* background: rgba(0,0,0,0);*/
     background: #421AAF;
-    border: 0.3rem solid #421AAF;
+    border: none;
     border-radius: 0.5rem;
     font-size: 2rem;
     font-weight: bold;
@@ -323,38 +324,6 @@ h4{
 
     font-size: 2.8rem;
     color: #1AAF48;
-}
-* list table */
-table{
-    width: 100%;
-    margin: 
-}
-
-th{
-    border-bottom: 3px solid #CCCCCC;
-    padding: 2rem 0;
-}
-
-tr{
-    border-bottom: 1px solid #CCCCCC;
-}
-
-.list-word{
-    /* font-size: 3rem; pc*/
-    font-size: 1.6rem;
-    font-weight: bold;
-    float: left;
-}
-
-.text-center{
-    text-align: center;
-}
-
-table button{
-    border: none;
-    background: none;
-    color: #CCCCCC;
-    outline: 0;
 }
 
 .progress{
@@ -452,6 +421,7 @@ font-size: 2rem;
 #temporaryarea{
     resize: none;
     width: 100%;
+    min-height: 10rem;
 }
 
 /* modal */
@@ -480,8 +450,11 @@ font-size: 2rem;
     width: 90%;
     max-width: 600px;
     z-index: 2;
-
   }
+  .popup-inner button{
+      border: none;
+  }
+
   .pop-list{
     padding: 5rem 2rem 2rem 2rem;
     background-color: #eeeeee;
@@ -505,7 +478,7 @@ font-size: 2rem;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #1AAF48;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
     cursor: pointer;
   }

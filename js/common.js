@@ -178,9 +178,8 @@ function arreyLocalStorage() {
           </div>
           <div id="quizDefinition" style="visibility: hidden;">${d.definition}</div>
           </div>
-  
         <div id="answerButton">
-          <button type="button" id="" class="quiz-button" onclick="checkAnswer()">Flip</button>
+          <button type="button" class="quiz-button" onclick="checkAnswer()">Flip</button>
         </div>
         </div>
       </div>

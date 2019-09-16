@@ -9,6 +9,23 @@ function firstFunction() {
     showLength();
 }
 
+function importData() {
+    const text = document.getElementById("temporaryarea");
+    console.log(text.value);
+    const jsondata = JSON.parse(text.value);
+    Object.keys(jsondata).forEach(function (key) {
+        const flashcards = {
+            word: jsondata[key].word,
+            definition: jsondata[key].definition,
+            favorite: jsondata[key].favorite,
+            understanding: jsondata[key].understanding
+        };
+        const setjson = JSON.stringify(flashcards);
+        localStorage.setItem(jsondata[key].key, setjson);
+        ;
+})
+}
+
 // jsonファイルの読み込み・LocalStorageへの一括登録
 const form = document.forms.jsonForm;
 form.jsonFile.addEventListener('change', function (e) {
@@ -22,10 +39,11 @@ form.jsonFile.addEventListener('change', function (e) {
         const jsondata = JSON.parse(reader.result);
         Object.keys(jsondata).forEach(function (key) {
             const flashcards = {
+                key: jsondata[key].key,
                 word: jsondata[key].word,
                 definition: jsondata[key].definition,
-                favorite: [key].favorite,
-                understanding: [key].understanding
+                favorite: jsondata[key].favorite,
+                understanding: jsondata[key].understanding
             };
             const setjson = JSON.stringify(flashcards);
             localStorage.setItem(jsondata[key].key, setjson);
@@ -96,67 +114,55 @@ function deleteLocalStorageData(pushedDeleteButton) {
     closeModal();
 }
 
-// display: noneの要素に対してデータを保存
+// textareaに対してデータを保存
 function outputLocasStorage() {
-    let i = 0;
+    let i = 1;
+    console.log("iを生成" + i);
     let temporaryLocalStorage;
     let backupValue = document.getElementById("temporaryarea");
     backupValue.value = `[
     `;
     Object.keys(localStorage).forEach(function (key) {
         const d = JSON.parse(localStorage.getItem(key));
-        if (i === localStorage.length - 1) {
+        if (i === localStorage.length) {
             temporaryLocalStorage = `
             {
-                "key": ${key},
+                "key": "${key}",
                 "word": "${d.word}",
-                "favorite": "${d.favorite}",
-                "understanding": "${d.understanding}"
+                "favorite": ${d.favorite},
+                "understanding": ${d.understanding},
                 "definition": "${d.definition}"
             }
-            ]
-            `
+        ]`
+            backupValue.value = backupValue.value + temporaryLocalStorage;
+            i = 0;
         } else {
             temporaryLocalStorage = 
                 `{
-                    "key": ${key},
+                    "key": "${key}",
                     "word": "${d.word}",
-                    "favorite": "${d.favorite}",
-                    "understanding": "${d.understanding}"
+                    "favorite": ${d.favorite},
+                    "understanding": ${d.understanding},
                     "definition": "${d.definition}"
                   },
-            `
-                ;
-            console.log(temporaryLocalStorage);
+            `;
             backupValue.value = backupValue.value + temporaryLocalStorage;
             i = i + 1;
-            console.log(localStorage.length);
         }
     }
     )
-
+    document.getElementById('temporaryarea').select();
+    document.execCommand('copy');  //選択中のものをクリップボードへコピーする
+    alert('登録されているデータをコピーしました。テキストエディタに貼り付けて保存してください。');
 }
 
-function outputLocasStorage2() {
-    let backupValue = document.getElementById("temporaryarea");
-    backupValue.value =
-        `
-    {
-        "key": ""
-        "word": ""
-        "favorite": ""
-        "understanding": ""
-        "definition": ""
-      },`;
-
-let hahaha =
-    `
-    {
-        "key": ""hahahaha
-        "word": ""hahahhaahahahah
-        "favorite": ""gagagagaa
-        "understanding": ""
-        "definition": ""hhahaaaa
-      },`
-    backupValue.value = backupValue.value + hahaha;
-}
+// // textareaに対してデータを保存
+// function outputLocasStorage() {
+//     let i = 1;
+//     console.log("iを生成" + i);
+//     let temporaryLocalStorage;
+//     let backupValue = document.getElementById("temporaryarea");
+//     const d = JSON.stringify(localStorage);
+//     console.log(d);
+//     backupValue.value = d;
+// }
