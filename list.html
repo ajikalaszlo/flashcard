@@ -67,18 +67,18 @@
 
     <div class="develop">
     <h2>Develop</h2>
-    <button type="button" class="" onclick="dumpLocalStorageData()">全てのデータを削除</button>
+    <button type="button" class="alldeletebutton btm20" onclick="dumpLocalStorageData()">全てのデータを削除</button>
     <h2>エクスポート</h2>
-    <form name="jsonForm">
+    <!-- <form name="jsonForm">
       <input name="jsonFile" type="file" /><br />
-    </form>
+    </form> -->
     <form name="jsonForm">
-        <textarea id = "temporaryarea"></textarea>
+        <textarea id = "temporaryarea" class="btm10"></textarea>
       </form>
-  </div> 
-  <button type ="button" onclick="outputLocasStorage()">output</button>
-  <button type ="button" onclick="importData()">インプット</button>
-  <div id ="stored">
+
+  <button type ="button" class="alldeletebutton" onclick="outputLocasStorage()">アウトプット</button>
+  <button type ="button" class="alldeletebutton" onclick="importData()">インプット</button>
+</div> 
   </div>
     <script type="text/javascript" src="./js/common.js"></script>
     <script type="text/javascript" src="./js/list.js"></script>

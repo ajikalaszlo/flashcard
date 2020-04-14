@@ -11,7 +11,7 @@ function showAllData() {
     let i = 0;
     let l = 0;
     document.getElementById("list-all").innerHTML = "";
-    document.getElementById("list-cleared").innerHTML ="" ;
+    document.getElementById("list-cleared").innerHTML = "";
     Object.keys(localStorage).forEach(function (key) {
       const d = JSON.parse(localStorage.getItem(key));
       if (d.understanding <= 9) {
@@ -224,8 +224,6 @@ function arreyLocalStorage() {
     }
   }
   
-// 
-
   
   // Enterキーが押下されたとき次のフィールドにフォーカスする
   window.onkeydown = keydown; // キーの入力を監視してkeydownを発動

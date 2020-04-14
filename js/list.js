@@ -155,14 +155,3 @@ function outputLocasStorage() {
     document.execCommand('copy');  //選択中のものをクリップボードへコピーする
     alert('登録されているデータをコピーしました。テキストエディタに貼り付けて保存してください。');
 }
-
-// // textareaに対してデータを保存
-// function outputLocasStorage() {
-//     let i = 1;
-//     console.log("iを生成" + i);
-//     let temporaryLocalStorage;
-//     let backupValue = document.getElementById("temporaryarea");
-//     const d = JSON.stringify(localStorage);
-//     console.log(d);
-//     backupValue.value = d;
-// }
